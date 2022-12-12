@@ -1,0 +1,108 @@
+:root{
+    --colorMain: #C69749AA;
+    --relojBorde: #735F32; 
+    --relojFondo: #282A3A;
+}
+
+*{
+    font-family: 'Changa', sans-serif;
+}
+
+/* --Estructura del reloj-- */
+
+body{
+    background-color: #F1f1f1;
+	display: grid;
+	grid-template-areas: 
+	"header"
+	"main";
+	height: 100vh;
+}
+
+/* --Estilos del header-- */
+
+header{
+    grid-area: header;
+    background-color: var(--relojFondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4.8rem;
+    box-shadow: 0px -3px 28px 20px rgba(0,0,0,0.45);
+-webkit-box-shadow: 0px -3px 28px 20px rgba(0,0,0,0.45);
+-moz-box-shadow: 0px -3px 28px 20px rgba(0,0,0,0.45);
+}
+
+.redesSociales{
+    padding: 0.8rem;
+    font-size: 2.8rem;
+    color: var(--colorMain);
+    transition: color 0.08s;
+}
+
+.redesSociales:hover{
+    color: var(--relojBorde);
+}
+
+/** --Estilos del reloj-- **/
+
+.main{
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fecha, .hora-contenedor{
+    display: flex;
+    justify-content: center;
+    border: 10px solid var(--relojBorde);
+    background-color: var(--colorMain);
+    color: var(--relojFondo);
+    border-radius: .6rem;
+    margin: 2rem;
+}
+
+.fecha{
+    padding: 0 2rem;
+    font-size: 2rem;
+}
+
+.hora-contenedor{
+    width: 20rem;
+    padding: 1.6rem 0;
+}
+
+.hora{
+    font-size: 5rem;
+}
+
+.caja-segundos > *, .hora{
+    margin: 0;
+}
+
+.caja-segundos{
+    margin: 0 .8rem;
+}
+
+.caja-segundos > *{
+    font-size: 2.4rem;
+}
+
+/* --Responsive desing-- */
+
+@media screen and (max-width: 640px){
+    .fecha{
+        font-size: 1rem;
+    }
+
+    .fecha, .hora-contenedor{
+        margin: 1rem;
+    }
+}
